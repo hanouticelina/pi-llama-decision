@@ -28,16 +28,16 @@ Use [llama.cpp decision models](https://huggingface.co/blog/ggml-org/decision-mo
 
 Ask pi something like:
 
-> Use the llama-decision/ggml-org/Kev-4B-GGUF:Q4_K_M classifier to label my last 20 commits as feature, fix or chore.
+> Use the llama-decision/kev-4b classifier to label my last 20 commits as feature, fix or chore.
 
 ## Models
 
-| Model | Size |
-|---|---|
-| `ggml-org/Julia-1-GGUF:Q8_0` | 144M |
-| `ggml-org/Laya-GGUF:Q8_0` | 421M |
-| `ggml-org/Kev-4B-GGUF:Q4_K_M` | 4B |
-| `ggml-org/lev-GGUF:Q4_K_M` | 4B |
-| `ggml-org/OpenJev-GGUF:Q4_K_M` | 27B, reads images |
+| Model | llama.cpp model | Size |
+|---|---|---|
+| `llama-decision/julia-1` | `ggml-org/Julia-1-GGUF:Q8_0` | 144M |
+| `llama-decision/laya` | `ggml-org/Laya-GGUF:Q8_0` | 421M |
+| `llama-decision/kev-4b` | `ggml-org/Kev-4B-GGUF:Q4_K_M` | 4B |
+| `llama-decision/lev` | `ggml-org/lev-GGUF:Q4_K_M` | 4B |
+| `llama-decision/openjev` | `ggml-org/OpenJev-GGUF:Q4_K_M` | 27B, reads images |
 
 Using another port or host? Set `LLAMA_DECISION_URL`, for example `LLAMA_DECISION_URL=http://127.0.0.1:8081`.

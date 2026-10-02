@@ -4,13 +4,13 @@ Use [llama.cpp decision models](https://huggingface.co/blog/ggml-org/decision-mo
 
 ## Setup
 
-1. Start a decision model with llama.cpp on port 8081:
+1. Start a decision model with llama.cpp:
 
    ```bash
-   llama serve -hf ggml-org/Kev-4B-GGUF --port 8081
+   llama serve -hf ggml-org/Kev-4B-GGUF
    ```
 
-   You need a llama.cpp build that includes [#29818](https://github.com/ggml-org/llama.cpp/pull/29818). To switch between several downloaded models, run `llama serve --port 8081` instead: it loads each model when a request names it.
+   You need a llama.cpp build that includes [#29818](https://github.com/ggml-org/llama.cpp/pull/29818). To switch between several downloaded models, run `llama serve` instead: it loads each model when a request names it.
 
 2. Install the extension:
 
@@ -30,18 +30,6 @@ Ask pi something like:
 
 > Use the llama-decision/ggml-org/Kev-4B-GGUF:Q4_K_M classifier to label my last 20 commits as feature, fix or chore.
 
-From a codemode script or an extension:
-
-```js
-const kev = await models.getModelOfType("classifier", "llama-decision", "ggml-org/Kev-4B-GGUF:Q4_K_M");
-const result = await models.classify(kev, {
-  state: { message: "I was charged twice for my order." },
-  questions: {
-    team: { type: "choice", instructions: "Which team?", criteria: { billing: "payments", shipping: "delivery" } },
-  },
-});
-```
-
 ## Models
 
 | Model | Size |
@@ -52,4 +40,4 @@ const result = await models.classify(kev, {
 | `ggml-org/lev-GGUF:Q4_K_M` | 4B |
 | `ggml-org/OpenJev-GGUF:Q4_K_M` | 27B, reads images |
 
-Using another port or host? Set `LLAMA_DECISION_URL`, for example `LLAMA_DECISION_URL=http://127.0.0.1:9000`.
+Using another port or host? Set `LLAMA_DECISION_URL`, for example `LLAMA_DECISION_URL=http://127.0.0.1:8081`.

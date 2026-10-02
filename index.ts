@@ -20,7 +20,7 @@ export default function (pi: ExtensionAPI) {
 	const classify = typesafe.classify.bind(typesafe);
 
 	pi.registerProvider("llama-decision", {
-		baseUrl: `${(process.env.LLAMA_DECISION_URL ?? "http://127.0.0.1:8081").replace(/\/+$/, "")}/v1`,
+		baseUrl: `${(process.env.LLAMA_DECISION_URL ?? "http://127.0.0.1:8080").replace(/\/+$/, "")}/v1`,
 		apiKey: "local",
 		classifiers: { "typesafe-system-one": { classify } },
 		models: MODELS.map((model) => ({

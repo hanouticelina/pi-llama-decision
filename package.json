@@ -1,0 +1,19 @@
+{
+  "name": "pi-llama-decision",
+  "version": "0.1.0",
+  "description": "Use llama.cpp decision models (Kev, lev, Laya, Julia-1, OpenJev) as classifiers in pi",
+  "type": "module",
+  "license": "MIT",
+  "keywords": ["pi-package", "llama.cpp", "decision-models", "systemone"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hanouticelina/pi-llama-decision.git"
+  },
+  "pi": {
+    "extensions": ["./index.ts"]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*"
+  }
+}
